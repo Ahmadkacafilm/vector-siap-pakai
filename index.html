@@ -40,9 +40,48 @@ footer{padding:42px 0 25px;background:#100d18;color:#aaa}.foot{display:flex;just
 @media(max-width:620px){section{padding:75px 0}.hero{min-height:700px}.hero .wrap{padding-top:125px}h1{font-size:3.15rem}.grid3,.catalog-grid,.steps{grid-template-columns:1fr}.about-copy{padding:30px}.about-visual{min-height:330px}.format-band{grid-template-columns:1fr}.cta{padding:35px 27px}.cta-inner{display:block}.cta .btn{margin-top:22px;width:100%}.hero-note{gap:18px}.float-wa{right:16px;bottom:16px}}
  .menu-btn{display:none;border:0;background:#dcfce7;color:#166534;width:44px;height:44px;border-radius:12px;font-size:22px;cursor:pointer}.wa-svg{width:20px;height:20px;display:block}.float-wa .wa-svg{width:27px;height:27px}@media(max-width:950px){.menu-btn{display:grid;place-items:center}.navlinks{position:absolute;top:76px;right:4%;left:4%;display:none;flex-direction:column;gap:0;padding:10px;background:rgba(255,255,255,.98);border:1px solid var(--line);border-radius:18px;box-shadow:0 18px 50px rgba(16,60,35,.15)}.navlinks.open{display:flex}.navlinks a{padding:14px 16px;border-radius:10px}.navlinks a:hover{background:#ecfdf5}} </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Vector Siap Pakai","url":"https://ahmadkacafilm.github.io/vector-siap-pakai/","description":"Vector CDR, AI dan SVG untuk CNC, cutting, laser dan desain siap produksi."}</script>
-<style>html{scroll-behavior:smooth}body{overflow-x:hidden}.reveal{animation:fadeUp .7s ease both}@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}.navlinks a{transition:.25s}.navlinks a:hover{color:#22c55e}.card,.item,.service-card{transition:transform .3s ease,box-shadow .3s ease}.card:hover,.item:hover,.service-card:hover{transform:translateY(-6px);box-shadow:0 18px 45px rgba(6,78,59,.14)}img{max-width:100%}@media(max-width:700px){.hero{min-height:76vh}.hero-content{padding:90px 0 60px}.navlinks{max-height:70vh;overflow:auto}.btn{min-height:46px}.grid3{grid-template-columns:1fr!important}.item-img{aspect-ratio:1/1;background:#f3f8f4}.item-img img{object-fit:contain!important;padding:12px!important}.cta-inner{gap:22px!important}.cta-inner .btn{width:100%;text-align:center}}@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}</style></head>
+<style>html{scroll-behavior:smooth}body{overflow-x:hidden}.reveal{animation:fadeUp .7s ease both}@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}.navlinks a{transition:.25s}.navlinks a:hover{color:#22c55e}.card,.item,.service-card{transition:transform .3s ease,box-shadow .3s ease}.card:hover,.item:hover,.service-card:hover{transform:translateY(-6px);box-shadow:0 18px 45px rgba(6,78,59,.14)}img{max-width:100%}@media(max-width:700px){.hero{min-height:76vh}.hero-content{padding:90px 0 60px}.navlinks{max-height:70vh;overflow:auto}.btn{min-height:46px}.grid3{grid-template-columns:1fr!important}.item-img{aspect-ratio:1/1;background:#f3f8f4}.item-img img{object-fit:contain!important;padding:12px!important}.cta-inner{gap:22px!important}.cta-inner .btn{width:100%;text-align:center}}@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}</style><style>
+/* Final agreed visual system */
+:root{
+  --bg:#eef8f1;--surface:#f7fcf8;--surface-2:#e5f4e9;
+  --ink:#10271a;--muted:#587064;--line:#cfe5d5;
+  --green:#15803d;--green2:#22c55e;--deep:#06351c;
+}
+body{background:linear-gradient(180deg,#eaf7ee 0%,#f4fbf6 38%,#e8f5ec 100%);color:var(--ink)}
+nav{background:rgba(240,250,243,.86);border-bottom-color:rgba(180,211,190,.8)}
+.navlinks{color:#365247}
+.hero{min-height:760px;background:#062414}
+.hero-bg{background-image:url("assets/images/hero/hero-vector-siap-pakai.jpg");background-position:center center;background-size:cover;filter:saturate(1.05) contrast(1.02)}
+.hero:before{background:linear-gradient(90deg,rgba(2,20,10,.68) 0%,rgba(2,20,10,.42) 38%,rgba(2,20,10,.10) 72%,rgba(2,20,10,.02) 100%)}
+.hero .wrap{padding-top:135px;padding-bottom:135px}
+.eyebrow{color:#e9fff0;background:rgba(5,55,27,.34);border-color:rgba(207,255,222,.28)}
+h1{font-family:"Times New Roman",Times,serif;font-weight:700;font-size:clamp(3rem,6.2vw,5.7rem);line-height:.98;letter-spacing:-.035em;max-width:900px}
+h1 span{background:linear-gradient(90deg,#fff,#bbf7d0);-webkit-background-clip:text;background-clip:text}
+.lead{color:#e2f3e7}
+.hero-note{color:#d5ebdc}.hero-note strong{color:#fff}
+section{background:transparent}
+#tentang{background:linear-gradient(180deg,#e9f7ed,#f2faf4)}
+.services{background:linear-gradient(180deg,#dff2e5,#ebf8ef)}
+.catalog{background:linear-gradient(180deg,#e7f5eb,#f2faf4)}
+#cara{background:linear-gradient(180deg,#eef9f1,#e1f2e6)}
+#kontak{background:linear-gradient(180deg,#e2f3e7,#d8eedf)}
+.panel,.card,.item,.step,.format{background:rgba(248,253,249,.88);border-color:#cde3d3}
+.about-visual{background:#07351c}
+.about-visual img{object-fit:contain;background:#07351c}
+.stat{background:#eef8f1}
+.catalog-tools .filter{background:#f8fdf9;color:#365247}
+.item-img{background:linear-gradient(135deg,#dff3e5,#f1fbf4)}
+.cta{background:linear-gradient(120deg,#06351c,#116b36 55%,#16803d)}
+footer{background:#041b0d}
+@media(max-width:620px){
+ .hero{min-height:690px}
+ .hero-bg{background-position:center top}
+ .hero:before{background:linear-gradient(180deg,rgba(2,20,10,.64),rgba(2,20,10,.30) 58%,rgba(2,20,10,.16))}
+ h1{font-size:clamp(2.65rem,12vw,3.6rem);line-height:1}
+}
+</style></head>
 <body>
-<nav aria-label="Navigasi utama"><div class="wrap navin"><a class="brand" href="#"><span class="mzq">GalihSignature</span><span>Vector <b>Siap Pakai</b></span></a><button class="menu-btn" type="button" aria-label="Buka menu" aria-expanded="false">☰</button><div class="navlinks"><a href="#tentang">Tentang</a><a href="#layanan">Layanan</a><a href="#koleksi">Koleksi</a><a href="#edukasi">Edukasi</a><a href="free-vector.html">Free Vector</a><a href="#cara">Cara Pesan</a><a href="#kontak">Kontak</a></div></div></nav>
+<nav aria-label="Navigasi utama"><div class="wrap navin"><a class="brand" href="#"><span class="mzq">Mzq</span><span>Vector <b>Siap Pakai</b></span></a><button class="menu-btn" type="button" aria-label="Buka menu" aria-expanded="false">☰</button><div class="navlinks"><a href="#tentang">Tentang</a><a href="#layanan">Layanan</a><a href="#koleksi">Koleksi</a><a href="#edukasi">Edukasi</a><a href="free-vector.html">Free Vector</a><a href="#cara">Cara Pesan</a><a href="#kontak">Kontak</a></div></div></nav>
 
 <header class="hero"><div class="hero-bg"></div><div class="wrap"><span class="eyebrow"><i class="dot"></i> CDR • AI • SVG • SIAP PRODUKSI</span><h1>Vector profesional untuk <span>kebutuhan produksi.</span></h1><p class="lead">Koleksi vector untuk CNC, cutting, laser, engraving, sticker, sandblast dan kebutuhan desain lainnya. Pilih kode vector, kirim foto objek serta ukuran—kami bantu menyesuaikannya hingga siap diproduksi.</p><div class="actions"><a class="btn primary" href="#koleksi">Jelajahi Koleksi →</a><a class="btn secondary wa-hero" target="_blank" rel="noopener" href="https://wa.me/6285692520888?text=Halo%20Vector%20Siap%20Pakai%2C%20saya%20ingin%20konsultasi%20vector.">WhatsApp ↗</a></div><div class="hero-note"><div><strong>1999</strong>Berpengalaman sejak</div><div><strong>CDR • AI • SVG</strong>Format vector</div><div><strong>CNC • Laser • Cutting</strong>Siap produksi</div></div></div></header>
 
