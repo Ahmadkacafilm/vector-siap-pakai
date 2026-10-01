@@ -29,11 +29,10 @@
     "assets/T.jpg": "VSP-027",
     "assets/U.jpg": "VSP-028",
     "assets/V.jpg": "VSP-029",
+    "assets/VS 5.pdf": "VSP-002",
     "assets/W.jpg": "VSP-030",
     "assets/Y.jpg": "VSP-031",
     "assets/Z.jpg": "VSP-032"
   },
-  "vacant": [
-    "VSP-002"
-  ]
+  "vacant": []
 }
