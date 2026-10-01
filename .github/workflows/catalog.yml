@@ -1,0 +1,88 @@
+name: Maintain Vector Catalog Codes
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'assets/**'
+      - '.github/workflows/catalog.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  catalog:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Update permanent catalog codes
+        run: |
+          python3 <<'PY'
+          import json, os
+
+          IMAGE_EXT={'.jpg','.jpeg','.png','.webp','.gif','.svg'}
+          VECTOR_EXT=IMAGE_EXT | {'.cdr','.ai','.eps','.pdf'}
+
+          def eligible(path, free=False):
+              p=path.replace('\\','/')
+              ext=os.path.splitext(p)[1].lower()
+              if free:
+                  return p.startswith('assets/free-vector/') and ext in VECTOR_EXT and not p.endswith('.gitkeep')
+              return p.startswith('assets/') and not p.startswith('assets/free-vector/') and not p.startswith('assets/images/hero/') and not p.startswith('assets/vector/') and ext in VECTOR_EXT
+
+          def update(manifest, prefix, free=False):
+              old={}
+              retired=set()
+              if os.path.exists(manifest):
+                  try:
+                      data=json.load(open(manifest,encoding='utf-8'))
+                      old=data.get('files',{})
+                      retired=set(data.get('retired',[]))
+                  except Exception:
+                      pass
+
+              paths=[]
+              for root,_,files in os.walk('assets'):
+                  for f in files:
+                      p=os.path.join(root,f).replace('\\','/')
+                      if eligible(p,free):
+                          paths.append(p)
+              paths.sort()
+
+              active=set(paths)
+              for p,c in list(old.items()):
+                  if p not in active:
+                      retired.add(c)
+              used=set(old.values()) | retired
+              next_no=1
+              for p in paths:
+                  if p not in old:
+                      while f'{prefix}-{next_no:03d}' in used:
+                          next_no += 1
+                      old[p]=f'{prefix}-{next_no:03d}'
+                      used.add(old[p])
+                      next_no += 1
+
+              data={'version':1,'files':{p:old[p] for p in paths},'retired':sorted(retired)}
+              new=json.dumps(data,ensure_ascii=False,indent=2)+'\n'
+              current=open(manifest,encoding='utf-8').read() if os.path.exists(manifest) else ''
+              if new != current:
+                  os.makedirs(os.path.dirname(manifest),exist_ok=True)
+                  open(manifest,'w',encoding='utf-8').write(new)
+                  return True
+              return False
+
+          changed = update('assets/catalog.json','VSP',False)
+          changed = update('assets/free-vector/catalog.json','FREE',True) or changed
+          print('changed:', changed)
+          PY
+
+      - name: Commit catalog changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/catalog.json assets/free-vector/catalog.json
+          git diff --cached --quiet || git commit -m "Maintain permanent vector catalog codes [skip ci]"
+          git push
