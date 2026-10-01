@@ -30,7 +30,7 @@ jobs:
               ext=os.path.splitext(p)[1].lower()
               if free:
                   return p.startswith('assets/free-vector/') and ext in VECTOR_EXT and not p.endswith('.gitkeep')
-              return p.startswith('assets/') and not p.startswith('assets/free-vector/') and not p.startswith('assets/images/hero/') and not p.startswith('assets/vector/') and ext in VECTOR_EXT
+              return p.startswith('assets/') and not p.startswith('assets/free-vector/') and not p.startswith('assets/images/hero/') and not p.startswith('assets/vector/') and p != 'assets/favicon.svg' and ext in VECTOR_EXT
 
           def update(manifest, prefix, free=False):
               old={}
