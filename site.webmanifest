@@ -1,0 +1,10 @@
+{
+  "name":"Vector Siap Pakai",
+  "short_name":"Vector Siap Pakai",
+  "start_url":"/vector-siap-pakai/",
+  "display":"standalone",
+  "background_color":"#f3f8f4",
+  "theme_color":"#15803d",
+  "description":"Vector CDR, AI dan SVG untuk CNC, cutting, laser dan desain siap produksi.",
+  "icons":[{"src":"/vector-siap-pakai/assets/favicon.svg","sizes":"any","type":"image/svg+xml"}]
+}
