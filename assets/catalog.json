@@ -2,7 +2,6 @@
   "version": 1,
   "files": {
     "assets/332351647498537300.jpg": "VSP-001",
-    "assets/380413499757474443.jpg": "VSP-002",
     "assets/382383824599022618.jpg": "VSP-003",
     "assets/382383824610966797.jpg": "VSP-004",
     "assets/479774166556086156.jpg": "VSP-005",
@@ -34,5 +33,7 @@
     "assets/Y.jpg": "VSP-031",
     "assets/Z.jpg": "VSP-032"
   },
-  "vacant": []
+  "vacant": [
+    "VSP-002"
+  ]
 }
