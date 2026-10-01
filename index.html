@@ -80,11 +80,32 @@ footer{background:#041b0d}
 .item-img{min-height:240px;display:flex;align-items:center;justify-content:center;overflow:hidden}
 .item-img img{width:100%;height:100%;max-height:420px;object-fit:contain;display:block}
 .item-code{letter-spacing:.08em;font-weight:800}
+</style>
+<style id="hero-rebuild">
+.hero{min-height:820px;background:linear-gradient(135deg,#032b17 0%,#07552a 48%,#0b6b36 100%);position:relative;overflow:hidden}
+.hero-glow{position:absolute;width:760px;height:760px;right:-260px;top:-120px;border-radius:50%;background:radial-gradient(circle,rgba(74,222,128,.28),rgba(34,197,94,.08) 42%,transparent 70%);filter:blur(2px);pointer-events:none}
+.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(1,25,12,.32),transparent 62%);z-index:0}
+.hero:after{height:105px;background:linear-gradient(to top,var(--bg),transparent);z-index:5}
+.hero-layout{position:relative;z-index:3;min-height:820px;display:grid;grid-template-columns:minmax(0,1.03fr) minmax(390px,.72fr);align-items:center;gap:58px;padding:120px 0 125px}
+.hero-copy{max-width:730px}
+.hero h1{font-family:"Times New Roman",Times,serif;font-weight:700;font-size:clamp(3.2rem,5.6vw,5.7rem);line-height:.94;letter-spacing:-.025em;margin:23px 0 24px;color:#fff}
+.hero h1 span{background:linear-gradient(90deg,#fff,#bbf7d0);-webkit-background-clip:text;background-clip:text}
+.hero .lead{font-size:1.05rem;line-height:1.75;color:#dff5e7;max-width:680px}
+.hero-visual{display:flex;justify-content:center;align-items:center}
+.hero-frame{width:min(100%,500px);padding:11px;border:1px solid rgba(255,255,255,.22);border-radius:32px;background:rgba(255,255,255,.10);box-shadow:0 35px 90px rgba(0,0,0,.30);backdrop-filter:blur(10px);transform:rotate(1.2deg)}
+.hero-frame img{width:100%;height:auto;max-height:610px;display:block;object-fit:contain;border-radius:23px;background:#062b18}
+.hero-visual-label{display:flex;align-items:center;gap:12px;padding:15px 8px 5px;color:#dff5e7;font-size:.78rem}
+.hero-visual-label b{display:grid;place-items:center;width:34px;height:34px;border-radius:10px;background:#22c55e;color:#06351c;font:800 .72rem Manrope}
+.hero-visual-label span{font-weight:700;letter-spacing:.04em}
+.hero-note{margin-top:38px}
+#tentang{border-top:1px solid rgba(203,226,209,.7)}
+@media(max-width:950px){.hero-layout{grid-template-columns:1fr;gap:38px;padding-top:120px}.hero-copy{max-width:760px}.hero-visual{justify-content:flex-start}.hero-frame{width:min(100%,620px)}.hero{min-height:auto}}
+@media(max-width:620px){.hero-layout{padding:110px 0 105px;gap:28px}.hero h1{font-size:clamp(3rem,15vw,4rem);line-height:.96}.hero .lead{font-size:.96rem}.hero-frame{border-radius:24px;padding:8px;transform:none}.hero-frame img{max-height:none;border-radius:17px}.hero-visual-label{padding:12px 4px 3px}.hero-note{gap:16px;margin-top:30px}}
 </style></head>
 <body>
 <nav aria-label="Navigasi utama"><div class="wrap navin"><a class="brand" href="#"><span class="mzq">Mzq</span><span>Vector <b>Siap Pakai</b></span></a><button class="menu-btn" type="button" aria-label="Buka menu" aria-expanded="false">☰</button><div class="navlinks"><a href="#tentang">Tentang</a><a href="#layanan">Layanan</a><a href="#koleksi">Koleksi</a><a href="#edukasi">Edukasi</a><a href="free-vector.html">Free Vector</a><a href="#cara">Cara Pesan</a><a href="#kontak">Kontak</a></div></div></nav>
 
-<header class="hero"><div class="hero-bg"></div><div class="wrap"><span class="eyebrow"><i class="dot"></i> CDR • AI • SVG • SIAP PRODUKSI</span><h1>Vector profesional untuk <span>kebutuhan produksi.</span></h1><p class="lead">Koleksi vector untuk CNC, cutting, laser, engraving, sticker, sandblast dan kebutuhan desain lainnya. Pilih kode vector, kirim foto objek serta ukuran—kami bantu menyesuaikannya hingga siap diproduksi.</p><div class="actions"><a class="btn primary" href="#koleksi">Jelajahi Koleksi →</a><a class="btn secondary wa-hero" target="_blank" rel="noopener" href="https://wa.me/6285692520888?text=Halo%20Vector%20Siap%20Pakai%2C%20saya%20ingin%20konsultasi%20vector.">WhatsApp ↗</a></div><div class="hero-note"><div><strong>1999</strong>Berpengalaman sejak</div><div><strong>CDR • AI • SVG</strong>Format vector</div><div><strong>CNC • Laser • Cutting</strong>Siap produksi</div></div></div></header>
+<header class="hero"><div class="hero-glow"></div><div class="wrap hero-layout"><div class="hero-copy"><span class="eyebrow"><i class="dot"></i> CDR • AI • SVG • SIAP PRODUKSI</span><h1>Vector profesional untuk <span>kebutuhan produksi.</span></h1><p class="lead">Koleksi vector untuk CNC, cutting, laser, engraving, sticker, sandblast dan kebutuhan desain lainnya. Pilih kode vector, kirim foto objek serta ukuran—kami bantu menyesuaikannya hingga siap diproduksi.</p><div class="actions"><a class="btn primary" href="#koleksi">Jelajahi Koleksi →</a><a class="btn secondary wa-hero" target="_blank" rel="noopener" href="https://wa.me/6285692520888?text=Halo%20Vector%20Siap%20Pakai%2C%20saya%20ingin%20konsultasi%20vector.">WhatsApp ↗</a></div><div class="hero-note"><div><strong>1999</strong>Berpengalaman sejak</div><div><strong>CDR • AI • SVG</strong>Format vector</div><div><strong>CNC • Laser • Cutting</strong>Siap produksi</div></div></div><div class="hero-visual"><div class="hero-frame"><img src="assets/images/hero/hero-vector-siap-pakai.jpg" alt="Vector Siap Pakai - desain vector dan produksi" fetchpriority="high" decoding="async"><div class="hero-visual-label"><b>Mzq</b><span>Vector • Design • Production</span></div></div></div></div></header>
 
 <section id="tentang"><div class="wrap reveal"><div class="about"><div class="panel about-copy"><div class="kicker">Tentang Kami</div><h2>Berpengalaman sejak 1999.</h2><p class="sub">Vector Siap Pakai membantu kebutuhan vector dan desain yang benar-benar siap masuk tahap produksi. Kami tidak hanya menyediakan file, tetapi juga membantu penyesuaian ukuran dan gambaran penerapan pada objek sebelum produksi.</p><div class="stats"><div class="stat"><strong>1999</strong><small>Pengalaman</small></div><div class="stat"><strong>CDR</strong><small>CorelDRAW</small></div><div class="stat"><strong>AI</strong><small>Illustrator</small></div><div class="stat"><strong>SVG</strong><small>Scalable Vector</small></div></div></div><div class="panel about-visual"><img src="assets/images/hero/hero-vector-siap-pakai.jpg" alt="Workspace desain vector"><div class="visual-badge">Vector • Design • Production</div></div></div></div></section>
 
