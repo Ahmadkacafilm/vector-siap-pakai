@@ -32,8 +32,9 @@
     "assets/V.jpg": "VSP-029",
     "assets/W.jpg": "VSP-030",
     "assets/Y.jpg": "VSP-031",
-    "assets/Z.jpg": "VSP-032",
-    "assets/favicon.svg": "VSP-033"
+    "assets/Z.jpg": "VSP-032"
   },
-  "retired": []
+  "retired": [
+    "VSP-033"
+  ]
 }
