@@ -34,12 +34,12 @@ jobs:
 
           def update(manifest, prefix, free=False):
               old={}
-              retired=set()
+              vacant=set()
               if os.path.exists(manifest):
                   try:
                       data=json.load(open(manifest,encoding='utf-8'))
                       old=data.get('files',{})
-                      retired=set(data.get('retired',[]))
+                      vacant=set(data.get('vacant',[]))
                   except Exception:
                       pass
 
@@ -54,18 +54,23 @@ jobs:
               active=set(paths)
               for p,c in list(old.items()):
                   if p not in active:
-                      retired.add(c)
-              used=set(old.values()) | retired
+                      vacant.add(c)
+              used=set(old.values())
               next_no=1
               for p in paths:
                   if p not in old:
-                      while f'{prefix}-{next_no:03d}' in used:
+                      if vacant:
+                          code=sorted(vacant,key=lambda x:int(x.split('-')[-1]))[0]
+                          vacant.remove(code)
+                      else:
+                          while f'{prefix}-{next_no:03d}' in used or f'{prefix}-{next_no:03d}' in vacant:
+                              next_no += 1
+                          code=f'{prefix}-{next_no:03d}'
                           next_no += 1
-                      old[p]=f'{prefix}-{next_no:03d}'
-                      used.add(old[p])
-                      next_no += 1
+                      old[p]=code
+                      used.add(code)
 
-              data={'version':1,'files':{p:old[p] for p in paths},'retired':sorted(retired)}
+              data={'version':1,'files':{p:old[p] for p in paths},'vacant':sorted(vacant)}
               new=json.dumps(data,ensure_ascii=False,indent=2)+'\n'
               current=open(manifest,encoding='utf-8').read() if os.path.exists(manifest) else ''
               if new != current:
